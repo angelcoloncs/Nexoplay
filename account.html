@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi cuenta · NEXO PLAY</title>
+    <meta name="theme-color" content="#15112e" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2315112e'/%3E%3Crect x='3' y='3' width='4' height='10' fill='%23d5ff52'/%3E%3Crect x='9' y='3' width='4' height='10' fill='%23f4f2ff'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="Features/NavBar/nav-bar.css">
+    <link rel="stylesheet" href="Features/Account/account.css">
+    <link rel="stylesheet" href="Features/Footer/footer.css">
+</head>
+
+<body class="account-page-body">
+    <div id="header-container"></div>
+
+    <main id="main-content">
+        <!-- =====================================================
+             VISTA SIN SESIÓN: Iniciar sesión / Crear cuenta
+             ===================================================== -->
+        <section class="account-main" id="account-guest">
+            <div class="account-container">
+                <div class="account-hero-info">
+                    <span class="account-badge-pill">ÁREA DE JUGADOR</span>
+                    <h1 class="account-hero-title">Vuelve a tu próxima aventura.</h1>
+                    <p class="account-hero-desc">Accede a tus juegos, revisa tus pedidos y vuelve a copiar tus claves cuando quieras.</p>
+
+                    <div class="account-features-grid">
+                        <article class="account-feature-item">
+                            <svg class="account-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
+                            <h2 class="account-feature-title">Tu biblioteca, siempre contigo</h2>
+                            <p class="account-feature-text">Todos tus juegos y claves en un solo lugar.</p>
+                        </article>
+                        <article class="account-feature-item">
+                            <svg class="account-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>
+                            <h2 class="account-feature-title">Acceso seguro</h2>
+                            <p class="account-feature-text">Tus compras y datos siempre protegidos.</p>
+                        </article>
+                        <article class="account-feature-item">
+                            <svg class="account-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg>
+                            <h2 class="account-feature-title">Favoritos guardados</h2>
+                            <p class="account-feature-text">Marca juegos con ♥ y vuelve a ellos cuando quieras.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="account-card-wrapper">
+                    <div class="account-card">
+                        <div class="account-tabs" role="tablist" aria-label="Acceso">
+                            <button type="button" class="account-tab is-active" role="tab" aria-selected="true" data-mode="login">Iniciar sesión</button>
+                            <button type="button" class="account-tab" role="tab" aria-selected="false" data-mode="register">Crear cuenta</button>
+                        </div>
+
+                        <div class="account-card-main">
+                            <span class="account-card-step">01 / IDENTIFÍCATE</span>
+                            <h2 id="login-heading" class="account-card-title">Iniciar sesión</h2>
+                            <p class="account-card-subtitle">Introduce tus datos para continuar.</p>
+
+                            <form id="account-form" class="account-form" novalidate>
+                                <div class="field" data-register-only hidden>
+                                    <label for="account-name" class="field-label">Nombre</label>
+                                    <input type="text" id="account-name" class="field-input" placeholder="Tu nombre" autocomplete="name">
+                                    <p class="field-error"></p>
+                                </div>
+
+                                <div class="field">
+                                    <label for="account-email" class="field-label">Correo electrónico</label>
+                                    <input type="email" id="account-email" class="field-input" placeholder="tu@correo.com" autocomplete="email" required>
+                                    <p class="field-error"></p>
+                                </div>
+
+                                <div class="field">
+                                    <div class="account-label-row">
+                                        <label for="account-password" class="field-label">Contraseña</label>
+                                        <button type="button" id="account-toggle-password" class="account-toggle-pwd" aria-controls="account-password">Mostrar</button>
+                                    </div>
+                                    <input type="password" id="account-password" class="field-input" placeholder="Mínimo 6 caracteres" autocomplete="current-password" required>
+                                    <div class="pwd-meter" data-register-only hidden><span></span></div>
+                                    <p class="field-error"></p>
+                                </div>
+
+                                <div class="account-form-meta" data-login-only>
+                                    <label class="account-checkbox-label">
+                                        <input type="checkbox" id="account-remember" class="account-checkbox" checked>
+                                        <span>Recordarme</span>
+                                    </label>
+                                    <button type="button" class="account-link-forgot">¿Has olvidado tu contraseña?</button>
+                                </div>
+
+                                <p class="account-form-message" aria-live="polite"></p>
+
+                                <button type="submit" class="btn btn-primary btn-block account-submit-btn">Entrar en NEXO →</button>
+                            </form>
+                        </div>
+
+                        <div class="account-card-bottom">
+                            <span class="account-card-bottom-text">¿Aún no tienes cuenta?</span>
+                            <button type="button" class="account-register-link" data-switch>Crear cuenta ↗</button>
+                        </div>
+                    </div>
+
+                    <p class="account-card-disclaimer">
+                        Al continuar, aceptas los <a href="terms.html">Términos de uso</a> y la <a href="terms.html#privacidad">Política de privacidad</a> de NEXO PLAY.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             VISTA CON SESIÓN: Panel del jugador
+             ===================================================== -->
+        <section class="account-dashboard" id="account-dashboard" hidden>
+            <div class="container">
+                <header class="dash-header">
+                    <div class="dash-avatar" aria-hidden="true"></div>
+                    <div class="dash-hello">
+                        <span class="account-badge-pill">PLAYER ONE</span>
+                        <h1 class="dash-title"></h1>
+                        <p class="dash-email"></p>
+                    </div>
+                    <button type="button" class="btn btn-ghost btn-sm" id="btn-logout">Cerrar sesión</button>
+                </header>
+
+                <div class="dash-stats">
+                    <div class="dash-stat"><span class="dash-stat-num" id="stat-orders">0</span><span class="dash-stat-label">pedidos</span></div>
+                    <div class="dash-stat"><span class="dash-stat-num" id="stat-games">0</span><span class="dash-stat-label">claves compradas</span></div>
+                    <div class="dash-stat"><span class="dash-stat-num" id="stat-wish">0</span><span class="dash-stat-label">favoritos</span></div>
+                    <div class="dash-stat"><span class="dash-stat-num" id="stat-spent">$0</span><span class="dash-stat-label">invertido en diversión</span></div>
+                </div>
+
+                <section id="pedidos" class="dash-section">
+                    <h2 class="dash-section-title">Mis pedidos</h2>
+                    <div class="orders-list"></div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Favoritos (visible con o sin sesión) -->
+        <section id="favoritos" class="dash-section container">
+            <h2 class="dash-section-title">Mis favoritos</h2>
+            <div class="catalog-grid wishlist-grid"></div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <script src="js/data.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/account.js"></script>
+</body>
+
+</html>

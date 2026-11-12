@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXO PLAY · Juego</title>
+    <meta name="theme-color" content="#15112e" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2315112e'/%3E%3Crect x='3' y='3' width='4' height='10' fill='%23d5ff52'/%3E%3Crect x='9' y='3' width='4' height='10' fill='%23f4f2ff'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="Features/NavBar/nav-bar.css">
+    <link rel="stylesheet" href="Features/Product/product.css">
+    <link rel="stylesheet" href="Features/Product/DLC/dlc.css">
+    <link rel="stylesheet" href="Features/Footer/footer.css">
+</head>
+
+<body class="product-page-body">
+    <div id="header-container"></div>
+
+    <main id="main-content" class="product-main-container">
+        <!-- Migas de pan -->
+        <nav class="product-breadcrumbs" aria-label="Miga de pan">
+            <a href="index.html">Inicio</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="index.html#catalog">Catálogo</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="#" class="breadcrumb-genre"></a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current" aria-current="page"></span>
+        </nav>
+
+        <!-- HERO: portada + datos de compra -->
+        <section class="product-hero-section">
+            <div class="product-hero-media">
+                <div class="product-cover-card">
+                    <div class="product-cover-frame">
+                        <img src="" alt="" class="product-cover-img">
+                    </div>
+                    <div class="product-cover-caption">
+                        <span class="product-cover-title"></span>
+                        <span class="product-cover-edition"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-hero-details">
+                <div class="product-meta-header">
+                    <span class="product-badge-edition">EDICIÓN DIGITAL</span>
+                    <span class="product-badge-year"></span>
+                </div>
+
+                <h1 class="product-title"></h1>
+                <p class="product-edition"></p>
+
+                <div class="product-description"></div>
+
+                <div class="product-spec-pills"></div>
+
+                <!-- Selector de plataforma -->
+                <fieldset class="platform-picker">
+                    <legend class="platform-picker-title">Elige tu plataforma</legend>
+                    <div class="platform-picker-options"></div>
+                </fieldset>
+
+                <!-- Caja de compra -->
+                <div class="product-purchase-box">
+                    <div class="product-price-row">
+                        <span class="product-price"></span>
+                        <div class="product-price-meta">
+                            <span class="vat-notice">Precio final en USD</span>
+                            <span class="stock-status">Disponible ahora</span>
+                        </div>
+                    </div>
+
+                    <div class="product-buy-actions">
+                        <button type="button" class="btn btn-primary btn-primary-buy">
+                            Añadir al carrito →
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-buy-now">Comprar ahora</button>
+                    </div>
+
+                    <div class="product-secondary-actions">
+                        <button type="button" class="product-icon-action product-wish" aria-pressed="false"></button>
+                        <button type="button" class="product-icon-action product-share"></button>
+                    </div>
+
+                    <p class="product-delivery-notice">
+                        <span class="sparkle-icon" aria-hidden="true">&#9670;</span>
+                        Clave digital al instante · Pago seguro · Canje en la tienda de tu plataforma
+                    </p>
+
+                    <p class="product-in-cart" hidden></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DLC -->
+        <section class="product-dlc-section" hidden>
+            <h2 class="dlc-section-title">Expande tu aventura</h2>
+            <p class="dlc-section-subtitle"></p>
+            <div class="dlc-items-list"></div>
+        </section>
+
+        <!-- Ficha técnica -->
+        <section class="product-requirements-section">
+            <h2 class="requirements-section-title">Ficha técnica</h2>
+            <p class="requirements-section-subtitle">Todo lo que necesitas saber antes de pulsar «Start».</p>
+            <div class="requirements-cards-grid">
+                <div class="requirements-card">
+                    <h3 class="requirements-tier-title">El juego</h3>
+                    <dl class="requirements-spec-list" id="spec-game"></dl>
+                </div>
+                <div class="requirements-card">
+                    <h3 class="requirements-tier-title">Disponible en</h3>
+                    <dl class="requirements-spec-list" id="spec-platforms"></dl>
+                </div>
+            </div>
+        </section>
+
+        <!-- Relacionados -->
+        <section class="product-related-section">
+            <h2 class="requirements-section-title">También te puede gustar</h2>
+            <div class="related-grid"></div>
+        </section>
+    </main>
+
+    <!-- Barra de compra fija (aparece al bajar) -->
+    <div class="sticky-buy" aria-hidden="true">
+        <div class="sticky-buy-inner">
+            <img src="" alt="" class="sticky-buy-img">
+            <div class="sticky-buy-info">
+                <strong class="sticky-buy-title"></strong>
+                <span class="sticky-buy-platform"></span>
+            </div>
+            <span class="sticky-buy-price"></span>
+            <button type="button" class="btn btn-primary btn-sm sticky-buy-btn" tabindex="-1">Añadir</button>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+    <script src="js/data.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/product.js"></script>
+</body>
+
+</html>

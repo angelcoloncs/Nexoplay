@@ -1,0 +1,180 @@
+/* =========================================================
+   DLC · Tarjetas de contenido descargable
+   ========================================================= */
+.dlc-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.dlc-card {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 24px 22px 26px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--lime);
+    overflow: hidden;
+    transition: background-color .2s ease, transform .3s var(--ease-out), border-color .2s ease;
+    animation: card-in .5s var(--ease-out) both;
+}
+
+.dlc-card:nth-child(2) {
+    animation-delay: .08s;
+}
+
+.dlc-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(213, 255, 82, .08), transparent 40%);
+    opacity: 0;
+    transition: opacity .3s ease;
+    pointer-events: none;
+}
+
+.dlc-card:hover {
+    background: var(--surface-hover);
+    transform: translateX(6px);
+}
+
+.dlc-card:hover::after {
+    opacity: 1;
+}
+
+.dlc-card.is-owned {
+    border-color: rgba(213, 255, 82, .45);
+}
+
+.dlc-card-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
+}
+
+.dlc-thumb-badge {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    background: var(--lime);
+    color: var(--ink);
+    font-size: 28px;
+    line-height: 1;
+    overflow: hidden;
+    transition: transform .3s var(--ease-spring);
+}
+
+.dlc-card:hover .dlc-thumb-badge {
+    transform: rotate(-6deg) scale(1.06);
+}
+
+.dlc-thumb-badge.has-image {
+    background: var(--bg-deep);
+    border: 1px solid var(--border);
+}
+
+.dlc-thumb-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dlc-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.dlc-title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.dlc-description {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.dlc-card-right {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-shrink: 0;
+}
+
+.dlc-price {
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.btn-dlc-add {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-hard);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: border-color .15s ease, color .15s ease, transform .12s ease, box-shadow .12s ease;
+}
+
+.btn-dlc-add:not(:disabled)::after {
+    content: '+';
+    color: var(--lime);
+    font-size: 17px;
+    line-height: 1;
+}
+
+.btn-dlc-add:hover:not(:disabled) {
+    border-color: var(--lime);
+    color: var(--lime);
+}
+
+.btn-dlc-add:active:not(:disabled) {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.btn-dlc-add:disabled {
+    background: rgba(213, 255, 82, .1);
+    border-color: rgba(213, 255, 82, .4);
+    color: var(--lime);
+    box-shadow: none;
+    cursor: default;
+}
+
+.btn-dlc-add svg {
+    width: 16px;
+    height: 16px;
+}
+
+@media (max-width: 640px) {
+    .dlc-card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 18px;
+    }
+
+    .dlc-card:hover {
+        transform: none;
+    }
+
+    .dlc-card-right {
+        justify-content: space-between;
+        padding-top: 14px;
+        border-top: 1px solid var(--border-soft);
+    }
+}

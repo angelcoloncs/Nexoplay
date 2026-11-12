@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡A jugar! · NEXO PLAY</title>
+  <meta name="theme-color" content="#15112e" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2315112e'/%3E%3Crect x='3' y='3' width='4' height='10' fill='%23d5ff52'/%3E%3Crect x='9' y='3' width='4' height='10' fill='%23f4f2ff'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="Features/NavBar/nav-bar.css" />
+  <link rel="stylesheet" href="Features/cart/cart.css" />
+  <link rel="stylesheet" href="Features/Checkout/checkout.css" />
+  <link rel="stylesheet" href="Features/Footer/footer.css" />
+</head>
+
+<body class="confirm-page-body">
+  <div id="header-container"></div>
+
+  <main id="main-content" class="confirm-container">
+    <nav class="cart-steps" aria-label="Progreso de compra">
+      <span class="cart-step cart-step-done">01 Carrito ✓</span>
+      <span class="cart-step-separator">/</span>
+      <span class="cart-step cart-step-done">02 Pago ✓</span>
+      <span class="cart-step-separator">/</span>
+      <span class="cart-step cart-step-active" aria-current="step">03 A jugar</span>
+    </nav>
+
+    <section class="confirm-hero">
+      <div class="confirm-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+      </div>
+      <h1 class="confirm-title">¡Pedido completado!</h1>
+      <p class="confirm-text">Gracias por tu compra. Aquí tienes tus claves; también las guardamos en <a class="link-underline" href="account.html#pedidos">Mi cuenta → Pedidos</a>.</p>
+      <div class="confirm-meta"></div>
+    </section>
+
+    <h2 class="confirm-keys-title">Tus claves</h2>
+    <div class="confirm-keys"></div>
+    <div class="confirm-total"></div>
+
+    <div class="confirm-actions">
+      <a href="index.html#catalog" class="btn btn-primary">Seguir explorando →</a>
+      <a href="account.html#pedidos" class="btn btn-secondary">Ver mis pedidos</a>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/confirmation.js"></script>
+</body>
+
+</html>

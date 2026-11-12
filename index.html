@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXO PLAY · Tienda de videojuegos</title>
+  <meta name="description" content="NEXO PLAY: tienda de videojuegos digitales. God of War, Cyberpunk 2077, Persona, Dark Souls, Zelda y más, con entrega inmediata." />
+  <meta name="theme-color" content="#15112e" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2315112e'/%3E%3Crect x='3' y='3' width='4' height='10' fill='%23d5ff52'/%3E%3Crect x='9' y='3' width='4' height='10' fill='%23f4f2ff'/%3E%3C/svg%3E" />
+
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="Features/NavBar/nav-bar.css" />
+  <link rel="stylesheet" href="Features/HomePage/home-page.css" />
+  <link rel="stylesheet" href="Features/Catalog/catalog.css" />
+  <link rel="stylesheet" href="Features/Footer/footer.css" />
+</head>
+
+<body class="home-page-body">
+  <div id="header-container"></div>
+
+  <main id="main-content">
+    <!-- =====================================================
+         HERO: carrusel de juegos destacados
+         ===================================================== -->
+    <section class="home-hero" aria-label="Juegos destacados">
+      <div class="home-hero-bg" aria-hidden="true"></div>
+      <div class="home-hero-grid-lines" aria-hidden="true"></div>
+
+      <div class="home-hero-inner">
+        <div class="home-hero-content">
+          <p class="home-hero-eyebrow"><span class="blink">&#9654;</span> PLAYER ONE · SELECCIÓN 2026</p>
+          <h1 class="home-hero-title">Tu próxima aventura empieza aquí.</h1>
+          <p class="home-hero-description">
+            De los Nueve Reinos a Night City. Juegos elegidos a mano para PlayStation, Xbox, Nintendo y PC, con tu clave en el correo al instante.
+          </p>
+          <div class="home-hero-actions">
+            <a href="#catalog" class="btn btn-primary">Explorar catálogo →</a>
+            <a href="#" class="btn btn-secondary" id="hero-cta-featured">Ver destacado →</a>
+          </div>
+          <p class="home-hero-meta" id="hero-meta"></p>
+        </div>
+
+        <div class="home-hero-showcase">
+          <div class="hero-slides" id="hero-slides" aria-live="polite"></div>
+          <div class="hero-controls">
+            <button type="button" class="hero-arrow" data-hero="prev" aria-label="Juego anterior">&larr;</button>
+            <div class="hero-dots" role="tablist" aria-label="Seleccionar juego destacado"></div>
+            <button type="button" class="hero-arrow" data-hero="next" aria-label="Juego siguiente">&rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-benefits">
+        <article class="home-benefit reveal">
+          <span class="home-benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
+          </span>
+          <div>
+            <h2 class="home-benefit-title">Juega al instante</h2>
+            <p class="home-benefit-text">Clave digital en tu correo, sin esperas.</p>
+          </div>
+        </article>
+        <article class="home-benefit reveal" style="--delay:.1s">
+          <span class="home-benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>
+          </span>
+          <div>
+            <h2 class="home-benefit-title">Compra con confianza</h2>
+            <p class="home-benefit-text">Pago cifrado y precios finales, sin sorpresas.</p>
+          </div>
+        </article>
+        <article class="home-benefit reveal" style="--delay:.2s">
+          <span class="home-benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2" /><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01" /></svg>
+          </span>
+          <div>
+            <h2 class="home-benefit-title">Todas tus plataformas</h2>
+            <p class="home-benefit-text">PlayStation, Xbox, Nintendo y PC en un solo lugar.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         NOVEDADES
+         ===================================================== -->
+    <section id="novedades" class="home-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Recién llegados</p>
+            <h2 class="section-title">Novedades</h2>
+          </div>
+          <div class="rail-controls">
+            <button type="button" class="rail-arrow" data-rail="prev" aria-label="Desplazar a la izquierda">&larr;</button>
+            <button type="button" class="rail-arrow" data-rail="next" aria-label="Desplazar a la derecha">&rarr;</button>
+          </div>
+        </div>
+        <div class="game-rail" id="novedades-rail"></div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CATÁLOGO
+         ===================================================== -->
+    <section id="catalog" class="catalog-section">
+      <div class="container">
+        <div class="catalog-header reveal">
+          <div class="catalog-header-top">
+            <h2 class="catalog-title">Hechos para explorar.</h2>
+            <span class="catalog-total-count"></span>
+          </div>
+          <p class="catalog-subtitle">
+            De viajes épicos a desafíos sin piedad. Encuentra tu próxima obsesión.
+          </p>
+        </div>
+
+        <div class="catalog-layout">
+          <!-- Filtros -->
+          <aside class="catalog-filters" id="catalog-filters" aria-label="Filtros de catálogo">
+            <form class="filters-form" id="filters-form">
+              <div class="filters-heading">
+                <h3 class="filters-title">Filtros</h3>
+                <button type="button" class="filters-close" aria-label="Cerrar filtros">&times;</button>
+              </div>
+
+              <fieldset class="filter-group">
+                <legend class="filter-group-title">Plataforma</legend>
+                <div class="filter-options" data-filter="platform"></div>
+              </fieldset>
+
+              <fieldset class="filter-group">
+                <legend class="filter-group-title">Género</legend>
+                <div class="filter-options" data-filter="genre"></div>
+              </fieldset>
+
+              <fieldset class="filter-group filter-price-group">
+                <legend class="filter-group-title">Precio máximo</legend>
+                <input type="range" min="20" max="80" step="5" value="80" class="filter-range-slider" id="priceRange" aria-label="Precio máximo" />
+                <div class="filter-price-display"><span>$20</span><output id="priceOutput" for="priceRange">$80</output></div>
+              </fieldset>
+
+              <fieldset class="filter-group">
+                <legend class="filter-group-title">Extras</legend>
+                <label class="filter-checkbox-label">
+                  <input type="checkbox" name="has_dlc" value="true" />
+                  <span class="filter-checkbox-box" aria-hidden="true"></span>
+                  <span>Con DLC</span>
+                </label>
+                <label class="filter-checkbox-label">
+                  <input type="checkbox" name="wishlist" value="true" />
+                  <span class="filter-checkbox-box" aria-hidden="true"></span>
+                  <span>Solo mis favoritos</span>
+                </label>
+              </fieldset>
+
+              <div class="filter-actions">
+                <button type="reset" class="btn btn-ghost btn-sm btn-block">Limpiar filtros</button>
+              </div>
+            </form>
+          </aside>
+
+          <div class="catalog-main-content">
+            <div class="catalog-toolbar">
+              <button type="button" class="btn btn-secondary btn-sm filters-open">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M7 12h10M10 18h4" /></svg>
+                Filtros <span class="filters-open-count" hidden></span>
+              </button>
+              <span class="catalog-status-text" aria-live="polite"></span>
+              <div class="catalog-sort-group">
+                <label for="catalogSort" class="catalog-sort-label">Ordenar:</label>
+                <select id="catalogSort" class="catalog-sort-select">
+                  <option value="featured" selected>Destacados</option>
+                  <option value="newest">Más recientes</option>
+                  <option value="price-asc">Precio: menor a mayor</option>
+                  <option value="price-desc">Precio: mayor a menor</option>
+                  <option value="name">Nombre (A–Z)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="active-filters" id="active-filters"></div>
+
+            <div id="catalog-grid" class="catalog-grid"></div>
+
+            <p class="catalog-end-notice">Has visto toda la selección. Nuevos mundos llegan cada mes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="filters-backdrop"></div>
+    </section>
+
+    <!-- =====================================================
+         OFERTAS
+         ===================================================== -->
+    <section id="ofertas" class="home-section">
+      <div class="container">
+        <div class="promo-banner reveal">
+          <div class="promo-banner-text">
+            <p class="eyebrow">Ofertas activas</p>
+            <h2 class="section-title">Códigos para tu carrito</h2>
+            <p class="promo-banner-desc">Cópialos y pégalos en el carrito. Solo se aplica un código por pedido.</p>
+          </div>
+          <div class="promo-codes" id="promo-codes"></div>
+        </div>
+
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Precio amigo</p>
+            <h2 class="section-title">Por menos de $50</h2>
+          </div>
+          <a href="#catalog" class="link-underline" data-set-price="50">Ver en el catálogo →</a>
+        </div>
+        <div class="catalog-grid catalog-grid-compact" id="ofertas-grid"></div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SOBRE NEXO
+         ===================================================== -->
+    <section id="sobre" class="home-section">
+      <div class="container about-grid">
+        <div class="about-text reveal">
+          <p class="eyebrow">Sobre NEXO</p>
+          <h2 class="section-title">Pocos juegos. Todos buenos.</h2>
+          <p>NEXO PLAY nace de una idea sencilla: no necesitas un catálogo infinito, necesitas el juego correcto. Cada título está elegido por su historia, su forma de jugar y lo que deja cuando apagas la consola.</p>
+          <p>Compra la versión de tu plataforma, recibe la clave en tu correo y empieza a jugar. Sin cajas, sin esperas.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat reveal"><span class="stat-number" data-count="17">0</span><span class="stat-label">juegos elegidos</span></div>
+          <div class="stat reveal" style="--delay:.1s"><span class="stat-number" data-count="7">0</span><span class="stat-label">plataformas</span></div>
+          <div class="stat reveal" style="--delay:.2s"><span class="stat-number" data-count="4">0</span><span class="stat-label">expansiones</span></div>
+          <div class="stat reveal" style="--delay:.3s"><span class="stat-number" data-count="24" data-suffix=" h">0</span><span class="stat-label">tiempo de respuesta</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         FAQ
+         ===================================================== -->
+    <section id="faq" class="home-section">
+      <div class="container faq-layout">
+        <div class="reveal">
+          <p class="eyebrow">Ayuda</p>
+          <h2 class="section-title">Preguntas frecuentes</h2>
+          <p class="faq-intro">¿No encuentras lo que buscas? Escríbenos a <a class="link-underline" href="mailto:hola@nexoplay.com">hola@nexoplay.com</a>.</p>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item" open>
+            <summary>¿Cómo recibo mi juego?</summary>
+            <div class="faq-answer"><p>Al confirmar el pago verás tus claves en pantalla y las encontrarás en «Mi cuenta → Pedidos». Canjéalas en la tienda de tu plataforma.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Puedo elegir la plataforma?</summary>
+            <div class="faq-answer"><p>Sí. En la ficha de cada juego eliges PlayStation, Xbox, Nintendo o PC. Puedes tener el mismo juego en dos plataformas dentro del mismo carrito.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Qué pasa con los DLC?</summary>
+            <div class="faq-answer"><p>Los DLC necesitan el juego base. Si añades uno sin tener el juego en el carrito, lo añadimos por ti; si quitas el juego, también se quita su DLC.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Cómo uso un código de descuento?</summary>
+            <div class="faq-answer"><p>Escríbelo en el campo «Código promocional» del carrito. El descuento se refleja al instante en tu resumen.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Puedo pedir un reembolso?</summary>
+            <div class="faq-answer"><p>Si aún no has canjeado la clave, sí. Consulta los detalles en nuestros <a class="link-underline" href="terms.html#cancelaciones_cambios_y_devoluciones">Términos</a>.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/home.js"></script>
+</body>
+
+</html>
